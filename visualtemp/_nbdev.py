@@ -2,9 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"dashboard_one": "00_core.ipynb"}
 
-modules = []
+modules = ["core.py"]
 
 doc_url = "https://asvcode.github.io/visualtemp/"
 
