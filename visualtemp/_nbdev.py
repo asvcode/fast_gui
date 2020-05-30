@@ -2,9 +2,17 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"dashboard_one": "00_core.ipynb"}
+index = {"RED": "01_dashboard_one.ipynb",
+         "BLUE": "01_dashboard_one.ipynb",
+         "GREEN": "01_dashboard_one.ipynb",
+         "BOLD": "01_dashboard_one.ipynb",
+         "ITALIC": "01_dashboard_one.ipynb",
+         "RESET": "01_dashboard_one.ipynb",
+         "dashboard_one": "01_dashboard_one.ipynb",
+         "display_ui": "98_display.ipynb"}
 
-modules = ["core.py"]
+modules = ["dashboard_one.py",
+           "display.py"]
 
 doc_url = "https://asvcode.github.io/visualtemp/"
 
