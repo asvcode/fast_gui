@@ -9,9 +9,14 @@ index = {"RED": "01_dashboard_one.ipynb",
          "ITALIC": "01_dashboard_one.ipynb",
          "RESET": "01_dashboard_one.ipynb",
          "dashboard_one": "01_dashboard_one.ipynb",
+         "style": "02_dashboard_two.ipynb",
+         "dashboard_two": "02_dashboard_two.ipynb",
+         "ds_choice": "02_dashboard_two.ipynb",
          "display_ui": "98_display.ipynb"}
 
-modules = ["dashboard_one.py",
+modules = ["core.py",
+           "dashboard_one.py",
+           "dashboard_two.py",
            "display.py"]
 
 doc_url = "https://asvcode.github.io/visualtemp/"
