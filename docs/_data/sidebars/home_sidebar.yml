@@ -7,24 +7,21 @@ entries:
 - folders:
   - folderitems:
     - output: web,pdf
-      title: Export to modules
-      url: /export
+      title: Overview
+      url: /
     - output: web,pdf
-      title: Convert to html
-      url: /export2html
-    - output: web,pdf
-      title: Show doc
-      url: /showdoc
-    - output: web,pdf
-      title: Test functions
-      url: /test
-    - output: web,pdf
-      title: Core functions
+      title: Visual
       url: /core
     - output: web,pdf
-      title: Command line functions
-      url: /cli
+      title: Dashboard_one
+      url: /dashboard_one
+    - output: web,pdf
+      title: Dashboard_two
+      url: /dashboard_two
+    - output: web,pdf
+      title: Title
+      url: /test
     output: web
-    title: Notebook
+    title: visualtemp
   output: web
   title: Sidebar
