@@ -2,16 +2,18 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"RED": "01_dashboard_one.ipynb",
-         "BLUE": "01_dashboard_one.ipynb",
-         "GREEN": "01_dashboard_one.ipynb",
-         "BOLD": "01_dashboard_one.ipynb",
-         "ITALIC": "01_dashboard_one.ipynb",
-         "RESET": "01_dashboard_one.ipynb",
+index = {"RED": "02_dashboard_two.ipynb",
+         "BLUE": "02_dashboard_two.ipynb",
+         "GREEN": "02_dashboard_two.ipynb",
+         "BOLD": "02_dashboard_two.ipynb",
+         "ITALIC": "02_dashboard_two.ipynb",
+         "RESET": "02_dashboard_two.ipynb",
          "dashboard_one": "01_dashboard_one.ipynb",
          "style": "02_dashboard_two.ipynb",
          "dashboard_two": "02_dashboard_two.ipynb",
          "ds_choice": "02_dashboard_two.ipynb",
+         "plt_classes": "02_dashboard_two.ipynb",
+         "display_images": "02_dashboard_two.ipynb",
          "display_ui": "98_display.ipynb"}
 
 modules = ["core.py",

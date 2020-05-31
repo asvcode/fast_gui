@@ -10,6 +10,7 @@ import ipywidgets as widgets
 from IPython.display import display,clear_output, Javascript
 
 from .dashboard_one import *
+from .dashboard_two import *
 
 # Cell
 def display_ui():
@@ -42,7 +43,7 @@ def display_ui():
 
     with out1: #data
         clear_output()
-        #dashboard_two()
+        dashboard_two()
 
     with out2: #augmentation
         clear_output()
