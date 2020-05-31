@@ -11,6 +11,7 @@ from IPython.display import display,clear_output, Javascript
 
 from .dashboard_one import *
 from .dashboard_two import *
+from .aug_dash import *
 
 # Cell
 def display_ui():
@@ -47,7 +48,7 @@ def display_ui():
 
     with out2: #augmentation
         clear_output()
-        #aug_dash()
+        aug_dash()
 
     with out3: #Block
         clear_output()
