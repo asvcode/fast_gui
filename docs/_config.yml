@@ -20,7 +20,7 @@ exclude:
   - .idea/
   - .gitignore
   - vendor
- 
+
 exclude: [vendor]
 
 highlighter: rouge
@@ -61,4 +61,4 @@ sidebars:
 #permalink: pretty
 
 theme: jekyll-theme-cayman
-baseurl: /visualtemp/
+baseurl: /
