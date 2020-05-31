@@ -19,7 +19,7 @@ from IPython.display import clear_output
 from fastai2.vision.all import*
 
 from .dashboard_two import ds_choice
-from .display import display_ui
+
 
 style = {'description_width': 'initial'}
 
