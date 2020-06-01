@@ -4,6 +4,7 @@
     "Visual": "/core",
     "Dashboard_one": "/dashboard_one",
     "Dashboard_two": "/dashboard_two",
+    "Augmentation Dashboard": "/augmentation_dashboard",
     "Title": "/test"
   }
 }
