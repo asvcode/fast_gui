@@ -20,7 +20,6 @@ from fastai2.vision.all import*
 
 from .dashboard_two import ds_choice
 from .core import repeat_one
-from .display import display_ui
 
 
 style = {'description_width': 'initial'}
