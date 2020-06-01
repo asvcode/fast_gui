@@ -2,34 +2,35 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"RED": "03_aug_dash.ipynb",
-         "BLUE": "03_aug_dash.ipynb",
-         "GREEN": "03_aug_dash.ipynb",
-         "BOLD": "03_aug_dash.ipynb",
-         "ITALIC": "03_aug_dash.ipynb",
-         "RESET": "03_aug_dash.ipynb",
+index = {"repeat_one": "00_core.ipynb",
+         "RED": "03_augmentation_dashboard.ipynb",
+         "BLUE": "03_augmentation_dashboard.ipynb",
+         "GREEN": "03_augmentation_dashboard.ipynb",
+         "BOLD": "03_augmentation_dashboard.ipynb",
+         "ITALIC": "03_augmentation_dashboard.ipynb",
+         "RESET": "03_augmentation_dashboard.ipynb",
          "dashboard_one": "01_dashboard_one.ipynb",
-         "style": "03_aug_dash.ipynb",
+         "style": "03_augmentation_dashboard.ipynb",
          "dashboard_two": "02_dashboard_two.ipynb",
          "ds_choice": "02_dashboard_two.ipynb",
          "plt_classes": "02_dashboard_two.ipynb",
          "display_images": "02_dashboard_two.ipynb",
-         "aug_dash": "03_aug_dash.ipynb",
-         "aug_choice": "03_aug_dash.ipynb",
-         "aug_paras": "03_aug_dash.ipynb",
-         "aug": "03_aug_dash.ipynb",
-         "aug_dash_choice": "03_aug_dash.ipynb",
-         "code_test": "03_aug_dash.ipynb",
-         "stats_info": "03_aug_dash.ipynb",
+         "aug_dash": "03_augmentation_dashboard.ipynb",
+         "aug_choice": "03_augmentation_dashboard.ipynb",
+         "aug_paras": "03_augmentation_dashboard.ipynb",
+         "aug": "03_augmentation_dashboard.ipynb",
+         "aug_dash_choice": "03_augmentation_dashboard.ipynb",
+         "code_test": "03_augmentation_dashboard.ipynb",
+         "stats_info": "03_augmentation_dashboard.ipynb",
          "display_ui": "98_display.ipynb"}
 
 modules = ["core.py",
            "dashboard_one.py",
            "dashboard_two.py",
-           "aug_dash.py",
+           "augmentation_dashboard.py",
            "display.py"]
 
-doc_url = "https://asvcode.github.io/visualtemp/"
+doc_url = "https://asvcode.github.io/nbdev_test/"
 
 git_url = "https://github.com/asvcode/visualtemp/tree/master/"
 
