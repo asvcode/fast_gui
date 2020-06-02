@@ -13,13 +13,14 @@ RESET  = '\033[0m'
 
 
 import ipywidgets as widgets
-from ipywidgets import Layout
+from ipywidgets import Layout, FloatSlider, Box
 from IPython.display import clear_output
 
 from fastai2.vision.all import*
 
 from .dashboard_two import ds_choice
 from .core import repeat_one
+#from visualtemp.display import display_ui
 
 
 style = {'description_width': 'initial'}
@@ -337,7 +338,7 @@ def code_test():
         after_b = [Resize(final_size), IntToFloatTensor(), *aug_transforms(xtra_tfms=xtra_tfms, pad_mode=aug_dash.pad.value),
                    Normalize(stats_info.stats)]
 
-    if display_ui.tab.selected_index == 2: #>>> Augmentation tab
+    #if display_ui.tab.selected_index == 2: #>>> Augmentation tab
 
         tfms = [[PILImage.create], [parent_label, Categorize]]
         item_tfms = [ToTensor(), Resize(item_size)]
@@ -346,27 +347,27 @@ def code_test():
 
         dls.show_batch(max_n=12, nrows=2, ncols=6)
 
-    if display_ui.tab.selected_index == 3: #>>> DataBlock tab
+    #if display_ui.tab.selected_index == 3: #>>> DataBlock tab
 
-        items = get_image_files(ds_choice.source/'train')
-        split_idx = block_ch.spl_val(items)
-        tfms = [[block_ch.cls], [block_ch.outputb, block_ch.ctg]]
-        item_tfms = [ToTensor(), Resize(item_size)]
-        dsets = Datasets(items, tfms=tfms, splits=split_idx)
-        dls = dsets.dataloaders(after_item=item_tfms, after_batch=after_b, bs=int(aug_dash.bs.value), num_workers=0)
+     #   items = get_image_files(ds_choice.source/'train')
+     #   split_idx = block_ch.spl_val(items)
+     #   tfms = [[block_ch.cls], [block_ch.outputb, block_ch.ctg]]
+     #   item_tfms = [ToTensor(), Resize(item_size)]
+     #   dsets = Datasets(items, tfms=tfms, splits=split_idx)
+     #   dls = dsets.dataloaders(after_item=item_tfms, after_batch=after_b, bs=int(aug_dash.bs.value), num_workers=0)
 
-        display(db_button2)
-        db_out = widgets.Output()
-        display(db_out)
-        def on_db_out(b):
-            clear_output()
-            xb, yb = dls.one_batch()
-            print(BOLD + BLUE + "Train: " + RESET + RED + '(' + str(len(dls.train)) + ', ' + str(len(dls.train_ds)) + ') ' +
-                 BOLD + BLUE + "Valid: "+ RESET + RED + '(' + str(len(dls.valid)) + ', ' + str(len(dls.valid_ds)) + ')')
-            print(BOLD + BLUE + "Input Shape: " + RESET + RED + str(xb.shape))
-            print(BOLD + BLUE + "Output Shape: " + RESET + RED + str(yb.shape) + " by " + str(dls.c) + " classes")
-            dls.show_batch(max_n=12, nrows=2, ncols=6)
-        db_button2.on_click(on_db_out)
+     #   display(db_button2)
+     #   db_out = widgets.Output()
+     #   display(db_out)
+     #   def on_db_out(b):
+     #       clear_output()
+     #       xb, yb = dls.one_batch()
+     #       print(BOLD + BLUE + "Train: " + RESET + RED + '(' + str(len(dls.train)) + ', ' + str(len(dls.train_ds)) + ') ' +
+     #            BOLD + BLUE + "Valid: "+ RESET + RED + '(' + str(len(dls.valid)) + ', ' + str(len(dls.valid_ds)) + ')')
+     #       print(BOLD + BLUE + "Input Shape: " + RESET + RED + str(xb.shape))
+     #       print(BOLD + BLUE + "Output Shape: " + RESET + RED + str(yb.shape) + " by " + str(dls.c) + " classes")
+     #       dls.show_batch(max_n=12, nrows=2, ncols=6)
+     #   db_button2.on_click(on_db_out)
 
 
 # Cell
