@@ -1,7 +1,7 @@
 {
   "visualtemp": {
     "Overview": "/",
-    "Visual": "/core",
+    "Core": "/core",
     "Dashboard_one": "/dashboard_one",
     "Dashboard_two": "/dashboard_two",
     "Augmentation Dashboard": "/augmentation_dashboard",
