@@ -48,39 +48,29 @@ description: "API details."
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ds_3</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;GUI for 3rd Accordion window&quot;&quot;&quot;</span>
-    <span class="n">db_button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Confirm&#39;</span><span class="p">)</span>
-    <span class="n">ds_3</span><span class="o">.</span><span class="n">d1</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButtons</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;PILImage&#39;</span><span class="p">,</span> <span class="s1">&#39;PILImageBW&#39;</span><span class="p">],</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;info&#39;</span><span class="p">)</span>
-    <span class="n">ds_3</span><span class="o">.</span><span class="n">e1</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButtons</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;CategoryBlock&#39;</span><span class="p">,</span> <span class="s1">&#39;MultiCategoryBlock&#39;</span><span class="p">],</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;warning&#39;</span><span class="p">)</span>
-    <span class="n">ds_3</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButton</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;parent_label&#39;</span><span class="p">,</span> <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;danger&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">ds_3</span><span class="o">.</span><span class="n">s</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButtons</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;RandomSplitter&#39;</span><span class="p">,</span> <span class="s1">&#39;GrandparentSplitter&#39;</span><span class="p">],</span>
-                                   <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;success&#39;</span><span class="p">)</span>
-    <span class="n">form_items</span> <span class="o">=</span> <span class="p">[</span><span class="n">ds_3</span><span class="o">.</span><span class="n">d1</span><span class="p">,</span> <span class="n">ds_3</span><span class="o">.</span><span class="n">e1</span><span class="p">,</span> <span class="n">ds_3</span><span class="o">.</span><span class="n">s</span> <span class="p">,</span><span class="n">ds_3</span><span class="o">.</span><span class="n">g</span><span class="p">]</span>
+</div>
+    {% endraw %}
 
-    <span class="n">form_t</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">display</span><span class="o">=</span><span class="s1">&#39;flex&#39;</span><span class="p">,</span>
-                    <span class="n">flex_flow</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">,</span>
-                    <span class="n">align_items</span><span class="o">=</span><span class="s1">&#39;stretch&#39;</span><span class="p">,</span>
-                    <span class="n">border</span><span class="o">=</span><span class="s1">&#39;solid 1px&#39;</span><span class="p">,</span>
-                    <span class="n">width</span><span class="o">=</span><span class="s1">&#39;100%&#39;</span><span class="p">)</span>
-    <span class="n">form</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="n">form_items</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">form_t</span><span class="p">)</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">db_button</span><span class="p">)</span>
-    <span class="n">db_out</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">db_out</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">on_db_click</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">db_out</span><span class="p">:</span>
-            <span class="n">clear_output</span><span class="p">()</span>
-            <span class="n">block_ch</span><span class="p">()</span>
-            <span class="n">code_test</span><span class="p">()</span>
-    <span class="n">db_button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_db_click</span><span class="p">)</span>
-</pre></div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
-    </div>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="ds_3" class="doc_header"><code>ds_3</code><a href="https://github.com/asvcode/visualtemp/tree/master/visualtemp/datablock.py#L6" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ds_3</code>()</p>
+</blockquote>
+<p>GUI for 3rd Accordion window</p>
+
+</div>
+
+</div>
+
 </div>
 </div>
 

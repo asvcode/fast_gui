@@ -22,12 +22,14 @@ index = {"repeat_one": "00_core.ipynb",
          "aug_dash_choice": "03_augmentation_dashboard.ipynb",
          "code_test": "03_augmentation_dashboard.ipynb",
          "stats_info": "03_augmentation_dashboard.ipynb",
+         "ds_3": "04_datablock.ipynb",
          "display_ui": "98_display.ipynb"}
 
 modules = ["core.py",
            "dashboard_one.py",
            "dashboard_two.py",
            "augmentation_dashboard.py",
+           "datablock.py",
            "display.py"]
 
 doc_url = "https://asvcode.github.io/nbdev_test/"
