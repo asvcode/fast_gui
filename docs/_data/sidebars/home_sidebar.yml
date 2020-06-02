@@ -22,6 +22,9 @@ entries:
       title: Augmentation Dashboard
       url: /augmentation_dashboard
     - output: web,pdf
+      title: Datablock
+      url: /datablock
+    - output: web,pdf
       title: Title
       url: /test
     - output: web,pdf
