@@ -24,6 +24,9 @@ entries:
     - output: web,pdf
       title: Title
       url: /test
+    - output: web,pdf
+      title: Display_ui
+      url: /display
     output: web
     title: visualtemp
   output: web

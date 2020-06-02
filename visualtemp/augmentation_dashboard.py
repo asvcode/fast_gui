@@ -49,6 +49,7 @@ def aug_dash():
     to = widgets.Button(description='Batch Size', disabled=True, button_style='primary')
     aug_dash.imgbth = widgets.ToggleButtons(value='128', options=['28', '64', '128', '194', '254'],
                                             description='', button_style='primary', style=style, layout=Layout(width='auto'))
+    spa = widgets.Button(description='Augmentation', disabled=True, button_style='danger')
     tf = widgets.Button(description='Augmentation', disabled=True, button_style='danger')
     aug_dash.aug = widgets.ToggleButtons(value='No', options=['No', 'Yes'], description='', button_style='info',
                                       style=style, layout=Layout(width='auto'))
@@ -67,7 +68,7 @@ def aug_dash():
     iw = widgets.HBox(it5)
     ip = widgets.HBox(it52)
     iq = widgets.HBox(it6)
-    ir = widgets.VBox([il, ij, ik, ie, spj, iw, ip, iq])
+    ir = widgets.VBox([il, ij, ik, ie, spj, iw, ip, spa, iq])
     display(ir)
     display(aug_button)
 
@@ -309,7 +310,23 @@ def code_test():
         print(BOLD + BLUE + "Batch Size: " + RESET + RED + (aug_dash.bs.value))
         print(BOLD + BLUE + "Item Size: " + RESET + RED + str(item_size))
         print(BOLD + BLUE + "Final Size: " + RESET + RED + str(final_size))
+
+        #xtra_tfms = [RandomErasing(p=aug.b_pval.value, max_count=aug.b_max.value, min_aspect=aug.b_asp.value, sl=aug.b_len.value, sh=aug.b_ht.value), #p= probabilty
+        #         Brightness(max_lighting=aug.b4_max.value, p=aug.b4_pval.value, draw=None, batch=None),
+        #         Rotate(max_deg=aug.b2_max.value, p=aug.b2_pval.value, draw=None, size=None, mode='bilinear', pad_mode=aug_dash.pad.value),
+        #         Warp(magnitude=aug.b3_mag.value,p=aug.b3_pval.value,draw_x=None,draw_y=None,size=None,mode='bilinear',pad_mode=aug_dash.pad.value,batch=False,),
+        #         Contrast(max_lighting=aug.b1_max.value, p=aug.b1_pval.value, draw=aug.b1_draw.value, batch=True), #draw = 1 is normal batch=batch tfms or not
+        #         Dihedral(p=aug.b5_pval.value, draw=aug.b5_draw.value, size=None, mode='bilinear', pad_mode=PadMode.Reflection, batch=False),
+        #         Zoom(max_zoom=aug.b6_zoom.value, p=aug.b6_pval.value, draw=None, draw_x=None, draw_y=None, size=None, mode='bilinear',pad_mode=aug_dash.pad.value, batch=False)
+
         after_b = None
+        tfms = [[PILImage.create], [parent_label, Categorize]]
+        item_tfms = [ToTensor(), Resize(item_size)]
+        dsets = Datasets(code_test.items, tfms=tfms)
+        dls = dsets.dataloaders(after_item=item_tfms, after_batch=after_b, bs=int(aug_dash.bs.value), num_workers=0)
+
+        dls.show_batch(max_n=12, nrows=2, ncols=6)
+
     if aug_dash.aug.value == 'Yes':
         print(BOLD + BLUE + "working.....: " + RESET + RED + 'Augmentations\n')
         print(BOLD + BLUE + "RandomErasing: " + RESET + RED + 'max_count=' + str(aug.b_max.value) + ' p=' + str(aug.b_pval.value))
