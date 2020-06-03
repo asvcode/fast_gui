@@ -10,6 +10,7 @@ GREEN = '\033[92m'
 BOLD   = '\033[1m'
 ITALIC = '\033[3m'
 RESET  = '\033[0m'
+style = {'description_width': 'initial'}
 
 
 import ipywidgets as widgets
@@ -18,14 +19,8 @@ from IPython.display import clear_output
 
 from fastai2.vision.all import*
 
-#from visualtemp.dashboard_two import ds_choice
-#from visualtemp.core import repeat_one
-#from visualtemp.display import display_ui
 from .dashboard_two import ds_choice
 from .core import repeat_one
-
-
-style = {'description_width': 'initial'}
 
 # Cell
 def aug_dash():
@@ -82,7 +77,6 @@ def aug_dash():
             aug_choice()
     aug_button.on_click(on_aug_button)
 
-
 # Cell
 def aug_choice():
     """Helper for whether augmentations are choosen or not"""
@@ -101,7 +95,7 @@ def aug_choice():
 
 # Cell
 def aug_paras():
-    """If augmentations is choosen show available parameters"""
+    """If augmentations are choosen show available parameters"""
     print(BOLD + BLUE + "Choose Augmentation Parameters: ")
     button_paras = widgets.Button(description='Confirm', button_style='success')
 
@@ -134,7 +128,7 @@ def aug_paras():
 
 # Cell
 def aug():
-    """Aug choice helper"""
+    """Augmentation choice helper"""
     #Erase
     if aug_paras.hh.value == True:
             aug.b_max = FloatSlider(min=0,max=50,step=1,value=0, description='max count',
@@ -292,7 +286,7 @@ def aug_dash_choice():
 
 # Cell
 def code_test():
-    """Helpers"""
+    """Batch helpers"""
     db_button2 = widgets.Button(description='DataBlock')
     stats_info()
     method = ResizeMethod.Pad
@@ -312,14 +306,6 @@ def code_test():
         print(BOLD + BLUE + "Batch Size: " + RESET + RED + (aug_dash.bs.value))
         print(BOLD + BLUE + "Item Size: " + RESET + RED + str(item_size))
         print(BOLD + BLUE + "Final Size: " + RESET + RED + str(final_size))
-
-        #xtra_tfms = [RandomErasing(p=aug.b_pval.value, max_count=aug.b_max.value, min_aspect=aug.b_asp.value, sl=aug.b_len.value, sh=aug.b_ht.value), #p= probabilty
-        #         Brightness(max_lighting=aug.b4_max.value, p=aug.b4_pval.value, draw=None, batch=None),
-        #         Rotate(max_deg=aug.b2_max.value, p=aug.b2_pval.value, draw=None, size=None, mode='bilinear', pad_mode=aug_dash.pad.value),
-        #         Warp(magnitude=aug.b3_mag.value,p=aug.b3_pval.value,draw_x=None,draw_y=None,size=None,mode='bilinear',pad_mode=aug_dash.pad.value,batch=False,),
-        #         Contrast(max_lighting=aug.b1_max.value, p=aug.b1_pval.value, draw=aug.b1_draw.value, batch=True), #draw = 1 is normal batch=batch tfms or not
-        #         Dihedral(p=aug.b5_pval.value, draw=aug.b5_draw.value, size=None, mode='bilinear', pad_mode=PadMode.Reflection, batch=False),
-        #         Zoom(max_zoom=aug.b6_zoom.value, p=aug.b6_pval.value, draw=None, draw_x=None, draw_y=None, size=None, mode='bilinear',pad_mode=aug_dash.pad.value, batch=False)
 
         after_b = None
         tfms = [[PILImage.create], [parent_label, Categorize]]
@@ -357,8 +343,6 @@ def code_test():
         after_b = [Resize(final_size), IntToFloatTensor(), *aug_transforms(xtra_tfms=xtra_tfms, pad_mode=aug_dash.pad.value),
                    Normalize(stats_info.stats)]
 
-    #if display_ui.tab.selected_index == 2: #>>> Augmentation tab
-
         tfms = [[PILImage.create], [parent_label, Categorize]]
         item_tfms = [ToTensor(), Resize(item_size)]
         dsets = Datasets(code_test.items, tfms=tfms)
@@ -366,32 +350,9 @@ def code_test():
 
         dls.show_batch(max_n=12, nrows=2, ncols=6)
 
-    #if display_ui.tab.selected_index == 3: #>>> DataBlock tab
-
-     #   items = get_image_files(ds_choice.source/'train')
-     #   split_idx = block_ch.spl_val(items)
-     #   tfms = [[block_ch.cls], [block_ch.outputb, block_ch.ctg]]
-     #   item_tfms = [ToTensor(), Resize(item_size)]
-     #   dsets = Datasets(items, tfms=tfms, splits=split_idx)
-     #   dls = dsets.dataloaders(after_item=item_tfms, after_batch=after_b, bs=int(aug_dash.bs.value), num_workers=0)
-
-     #   display(db_button2)
-     #   db_out = widgets.Output()
-     #   display(db_out)
-     #   def on_db_out(b):
-     #       clear_output()
-     #       xb, yb = dls.one_batch()
-     #       print(BOLD + BLUE + "Train: " + RESET + RED + '(' + str(len(dls.train)) + ', ' + str(len(dls.train_ds)) + ') ' +
-     #            BOLD + BLUE + "Valid: "+ RESET + RED + '(' + str(len(dls.valid)) + ', ' + str(len(dls.valid_ds)) + ')')
-     #       print(BOLD + BLUE + "Input Shape: " + RESET + RED + str(xb.shape))
-     #       print(BOLD + BLUE + "Output Shape: " + RESET + RED + str(yb.shape) + " by " + str(dls.c) + " classes")
-     #       dls.show_batch(max_n=12, nrows=2, ncols=6)
-     #   db_button2.on_click(on_db_out)
-
-
 # Cell
 def stats_info():
-    """Stats helper"""
+    """Normalization stats helper"""
     if aug_dash.norm.value == 'Imagenet':
         stats_info.stats = ([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         stats_info.code = ('*imagenet_stats')
