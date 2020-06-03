@@ -31,6 +31,6 @@ entries:
       title: Display_ui
       url: /display
     output: web
-    title: visualtemp
+    title: fast_gui
   output: web
   title: Sidebar
