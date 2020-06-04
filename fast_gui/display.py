@@ -60,24 +60,10 @@ def display_ui():
         clear_output()
         write_code()
 
-    with out5: #Imagewoof Play
-        clear_output()
-        #print(BOLD + BLUE + 'Work in progress.....')
-        #play_button = widgets.Button(description='Parameters')
-        #display(play_button)
-        #play_out = widgets.Output()
-        #display(play_out)
-        #def button_play(b):
-        #    with play_out:
-        #        clear_output()
-        #        play_info()
-        #play_button.on_click(button_play)
-
-    display_ui.tab = widgets.Tab(children = [out1a, out1, out2, out3, out4, out5])
+    display_ui.tab = widgets.Tab(children = [out1a, out1, out2, out3, out4])
     display_ui.tab.set_title(0, 'Info')
     display_ui.tab.set_title(1, 'Data')
     display_ui.tab.set_title(2, 'Augmentation')
     display_ui.tab.set_title(3, 'DataBlock')
     display_ui.tab.set_title(4, 'Code')
-    display_ui.tab.set_title(5, 'ImageWoof Play')
     display(display_ui.tab)
