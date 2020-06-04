@@ -28,9 +28,6 @@ entries:
       title: Code
       url: /code
     - output: web,pdf
-      title: Title
-      url: /display_test
-    - output: web,pdf
       title: Display
       url: /display
     output: web
