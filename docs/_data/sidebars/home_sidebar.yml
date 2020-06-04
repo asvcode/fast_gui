@@ -29,7 +29,7 @@ entries:
       url: /code
     - output: web,pdf
       title: Title
-      url: /test
+      url: /display_test
     - output: web,pdf
       title: Display
       url: /display

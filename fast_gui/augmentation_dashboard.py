@@ -279,7 +279,6 @@ def aug_dash_choice():
         with aug_dash_out:
             clear_output()
             stats_info()
-            #image_show()
             code_test()
     button_aug_dash.on_click(on_button_two)
 
