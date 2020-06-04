@@ -6,7 +6,8 @@
     "Dashboard_two": "/dashboard_two",
     "Augmentation Dashboard": "/augmentation_dashboard",
     "Datablock": "/datablock",
+    "Code": "/code",
     "Title": "/test",
-    "Display_ui": "/display"
+    "Display": "/display"
   }
 }
